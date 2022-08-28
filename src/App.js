@@ -2,7 +2,7 @@ import {useState} from 'react';
 import { Form } from "./components/Form";
 import { Todos } from "./components/Todos";
 import {useDispatch, useSelector} from 'react-redux';
-import {deleteAll} from './redux/todoapp/actions';
+import {deleteAll, FILTER_TODO} from './redux/todoapp/actions';
 import './index.css'
 
 function App() {
@@ -37,8 +37,14 @@ function App() {
       cancelUpdate={cancelUpdate}/>
       <Todos handleEditClick={handleEditClick} editFormVisibility={editFormVisibility}/>
       {todos.length > 1 && (
+        <div>
         <button className='btn btn-danger btn-md delete-all'
         onClick={()=>dispatch(deleteAll())} >DELETE ALL</button>
+        <button className='btn btn-danger btn-md delete-all' onClick={()=>dispatch({type: FILTER_TODO})} >DONE FILTER</button>
+        <button className='btn btn-danger btn-md delete-all' onClick={()=>dispatch({type:'hi'})} >DONE</button>
+   
+        </div>
+        
       )}
     </div>
   );

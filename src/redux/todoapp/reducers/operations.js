@@ -1,11 +1,12 @@
 /* eslint-disable array-callback-return */
-import { ADD_TODO, DELETE_ALL, REMOVE_TODO, UPDATE_CHECKBOX, UPDATE_TODO } from "../actions";
+import { ADD_TODO, DELETE_ALL, FILTER_TODO, REMOVE_TODO, UPDATE_CHECKBOX, UPDATE_TODO } from "../actions";
 
 const initialState=[
     {id: 1, todo: 'Buy Laptop', completed: false},
     {id: 2, todo: 'Master Redux', completed: false},
     {id: 3, todo: 'Watering Plants', completed: true},
 ];
+
 
 export const operationsReducer=(state=initialState, action)=>{
     switch(action.type){
@@ -37,6 +38,9 @@ export const operationsReducer=(state=initialState, action)=>{
                 todoArray.push(item);
             })
             return todoArray;
+        case FILTER_TODO :
+            
+        return [...state.filter((e)=>e.completed===true)] ;
         default: return state;
     }
 }
