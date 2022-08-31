@@ -28,7 +28,7 @@ function App() {
   const cancelUpdate=()=>{
     setEditFormVisibility(false);
   }
-
+   
     return (
     <div className="container text-center" style={{ background:'rgb(0, 173, 181)' }}>
       <br></br>
@@ -40,8 +40,8 @@ function App() {
         <div>
         <button className='btn btn-danger btn-md delete-all'
         onClick={()=>dispatch(deleteAll())} >DELETE ALL</button>
-        <button className='btn btn-danger btn-md delete-all' onClick={()=>dispatch({type: FILTER_TODO})} >DONE FILTER</button>
-        <button className='btn btn-danger btn-md delete-all' onClick={()=>dispatch({type:'hi'})} >DONE</button>
+       
+       
    
         </div>
         
